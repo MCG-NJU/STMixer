@@ -1,0 +1,71 @@
+DATA:
+  PATH_TO_DATA_DIR: "/data0/wutao/ava"
+  NUM_FRAMES: 32
+  SAMPLING_RATE: 2
+  INPUT_CHANNEL_NUM: [3, 3]
+  DATASETS: [ 'ava_v2.2' ]
+  TRAIN_MIN_SCALES: [ 256, 320 ]
+  TEST_MIN_SCALES: [ 256 ]
+MODEL:
+  WEIGHT: "data/models/pretrained_models/SLOWFAST_8x8_R50.pkl"
+  BACKBONE:
+    CONV_BODY: "PySlowfast-R50"
+    PATHWAYS: 2
+    FROZEN_BN: False # setting True may be better
+  STM:
+    NUM_QUERIES: 100
+    HIDDEN_DIM: 256
+    NUM_STAGES: 6
+    ACTION_CLASSES: 80
+    OBJECT_CLASSES: 1
+    NUM_HEADS: 8
+    DROPOUT: 0.0
+    DIM_FEEDFORWARD: 2048
+    NUM_FCS: 2
+    ACTIVATION: 'ReLU'
+    SPATIAL_POINTS: 32
+    TEMPORAL_POINTS: 8
+    OUT_MULTIPLIER: 4
+    N_GROUPS: 4
+    NUM_CLS: 1
+    NUM_ACT: 1
+    NUM_REG: 1
+    OBJECT_WEIGHT: 2.0
+    ACTION_WEIGHT: 24.0
+    GIOU_WEIGHT: 2.0
+    L1_WEIGHT: 2.0
+    BACKGROUND_WEIGHT: 0.1
+    INTERMEDIATE_SUPERVISION: True
+    PERSON_THRESHOLD: 0.6
+    MEM_ACTIVE: False
+RESNET:
+  DEPTH: 50
+  NUM_BLOCK_TEMP_KERNEL: [ [ 3, 3 ], [ 4, 4 ], [ 6, 6 ], [ 3, 3 ] ]
+  SPATIAL_DILATIONS: [ [ 1, 1 ], [ 1, 1 ], [ 1, 1 ], [ 1, 1 ] ]
+  SPATIAL_STRIDES: [ [ 1, 1 ], [ 2, 2 ], [ 2, 2 ], [ 2, 2 ] ]
+SLOWFAST:
+  ALPHA: 4
+  BETA_INV: 8
+  FUSION_CONV_CHANNEL_RATIO: 2
+  FUSION_KERNEL_SZ: 7
+NONLOCAL:
+  LOCATION: [ [ [ ], [ ] ], [ [ ], [ ] ], [ [ ], [ ] ], [ [ ], [ ] ] ]
+  GROUP: [ [ 1, 1 ], [ 1, 1 ], [ 1, 1 ], [ 1, 1 ] ]
+  INSTANTIATION: dot_product
+  POOL: [ [ [ 1, 2, 2 ], [ 1, 2, 2 ] ], [ [ 1, 2, 2 ], [ 1, 2, 2 ] ], [ [ 1, 2, 2 ], [ 1, 2, 2 ] ], [ [ 1, 2, 2 ], [ 1, 2, 2 ] ] ]
+SOLVER:
+  ITER_PER_EPOCH: 11524
+  MAX_EPOCH: 12
+  BASE_LR: 0.00002
+  WEIGHT_DECAY: 1e-4
+  STEPS: (5, 8)
+  WARMUP_FACTOR: 0.1
+  WARMUP_EPOCH: 2
+  CHECKPOINT_PERIOD: 1
+  EVAL_PERIOD: 1
+  EVAL_AFTER: 3
+  VIDEOS_PER_BATCH: 16
+  OPTIMIZING_METHOD: 'adamw'
+TEST:
+  VIDEOS_PER_BATCH: 16
+OUTPUT_DIR: "data/output/slowfast-r50"
