@@ -6,12 +6,14 @@ DATA:
   DATASETS: [ 'ava_v2.2' ]
   TRAIN_MIN_SCALES: [ 256, 320 ]
   TEST_MIN_SCALES: [ 256 ]
+AVA:
+  ANNOTATION_DIR: "annotations_v2.2/"
 MODEL:
-  WEIGHT: "data/models/pretrained_models/SLOWFAST_8x8_R50.pkl"
+  WEIGHT: "/path/to/SLOWFAST_8x8_R50.pkl"
   BACKBONE:
     CONV_BODY: "PySlowfast-R50"
     PATHWAYS: 2
-    FROZEN_BN: False # setting True may be better
+    FROZEN_BN: True # setting True may be better
   STM:
     NUM_QUERIES: 100
     HIDDEN_DIM: 256

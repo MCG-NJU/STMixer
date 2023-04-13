@@ -1,5 +1,5 @@
 DATA:
-  PATH_TO_DATA_DIR: "/data0/wutao/ava"
+  PATH_TO_DATA_DIR: "/path/to/ava"
   NUM_FRAMES: 4
   SAMPLING_RATE: 16
   INPUT_CHANNEL_NUM: [3]
@@ -9,7 +9,7 @@ DATA:
 AVA:
   ANNOTATION_DIR: "annotations_v2.2/"
 MODEL:
-  WEIGHT: "data/models/pretrained_models/SLOWONLY_4x16_R50.pkl"
+  WEIGHT: "/path/to/SLOWONLY_4x16_R50.pkl"
   BACKBONE:
     CONV_BODY: "PySlowonly"
     PATHWAYS: 1

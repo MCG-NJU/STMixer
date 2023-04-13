@@ -1,13 +1,15 @@
 DATA:
-  PATH_TO_DATA_DIR: "/data0/wutao/ava"
+  PATH_TO_DATA_DIR: "/path/to/ava"
   NUM_FRAMES: 32
   SAMPLING_RATE: 2
   INPUT_CHANNEL_NUM: [3, 3]
   DATASETS: [ 'ava_v2.2' ]
   TRAIN_MIN_SCALES: [ 256, 320 ]
   TEST_MIN_SCALES: [ 256 ]
+AVA:
+  ANNOTATION_DIR: "annotations_v2.2/"
 MODEL:
-  WEIGHT: "data/models/pretrained_models/SLOWFAST_32x2_R101_50_50.pkl"
+  WEIGHT: "/path/to/SLOWFAST_32x2_R101_50_50.pkl"
   BACKBONE:
     CONV_BODY: "PySlowfast-R101"
     PATHWAYS: 2
