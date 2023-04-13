@@ -18,9 +18,9 @@ Please refer to [ACAR-Net repo DATA.md](https://github.com/Siyu-C/ACAR-Net/blob/
 ## Model Zoo
 | Backbone          | Config | Pre-train Model | Frames | Sampling Rate | Model |
 |-------------------|:------:|:---------------:|:------:|:-------------:|:-----:|
-| SlowOnly-R50      |   [cfg](https://github.com/MCG-NJU/STMixer/blob/main/config_files/PySlowonly-R50-K400-4x16.yaml)     |       [K400](https://dl.fbaipublicfiles.com/pyslowfast/model_zoo/kinetics400/SLOWONLY_4x16_R50.pkl)      |    4   |       16      |  [Link]() |
-| SlowFast-R50      |   [cfg](https://github.com/MCG-NJU/STMixer/blob/main/config_files/PySlowfast-R50-K400-8x8.yaml)      |       [K400](https://dl.fbaipublicfiles.com/pyslowfast/model_zoo/kinetics400/SLOWFAST_8x8_R50.pkl)      |    8   |       8       |  [Link]() |
-| SlowFast-R101-NL  |   [cfg](https://github.com/MCG-NJU/STMixer/blob/main/config_files/PySlowfast-R101-NL-K600-8x8.yaml)  |       [K600](https://dl.fbaipublicfiles.com/pyslowfast/model_zoo/ava/pretrain/SLOWFAST_32x2_R101_50_50.pkl)      |    8   |       8       |  [Link]() |
+| SlowOnly-R50      |   [cfg](https://github.com/MCG-NJU/STMixer/blob/main/config_files/PySlowonly-R50-K400-4x16.yaml)     |       [K400](https://dl.fbaipublicfiles.com/pyslowfast/model_zoo/kinetics400/SLOWONLY_4x16_R50.pkl)      |    4   |       16      |  [Link](https://drive.google.com/file/d/1qJdnCGwi5NeqpHFYxPpIixLY6Mpsuync/view?usp=share_link) |
+| SlowFast-R50      |   [cfg](https://github.com/MCG-NJU/STMixer/blob/main/config_files/PySlowfast-R50-K400-8x8.yaml)      |       [K400](https://dl.fbaipublicfiles.com/pyslowfast/model_zoo/kinetics400/SLOWFAST_8x8_R50.pkl)      |    8   |       8       |  [Link](https://drive.google.com/file/d/1pwXBC-g-OS71wzd9lxHDITASRw1cxRWm/view?usp=share_link) |
+| SlowFast-R101-NL  |   [cfg](https://github.com/MCG-NJU/STMixer/blob/main/config_files/PySlowfast-R101-NL-K600-8x8.yaml)  |       [K600](https://dl.fbaipublicfiles.com/pyslowfast/model_zoo/ava/pretrain/SLOWFAST_32x2_R101_50_50.pkl)      |    8   |       8       |  [Link](https://drive.google.com/file/d/1oouF7IZFxs-vXhUDXSkLpy7FE5oh6Vp2/view?usp=share_link) |
 | ViT-B(VideoMAE)   |   TODO  |       K400      |   16   |       4       |  TODO |
 | ViT-B(VideoMAEv2) |   TODO  |    K701+K400    |   16   |       4       |  TODO |
 
