@@ -24,10 +24,32 @@ Please refer to [ACAR-Net repo DATA.md](https://github.com/Siyu-C/ACAR-Net/blob/
 | ViT-B(VideoMAE)   |   TODO  |       K400      |   16   |       4       |  TODO |
 | ViT-B(VideoMAEv2) |   TODO  |    K710+K400    |   16   |       4       |  TODO |
 
-## Train
-python -m torch.distributed.launch --nproc_per_node=8 train_net.py --config-file "config_files/config_file.yaml" --transfer --no-head --use-tfboard
 
-## Val
+## Training
+```shell
+python -m torch.distributed.launch --nproc_per_node=8 train_net.py --config-file "config_files/config_file.yaml" --transfer --no-head --use-tfboard
+```
+
+## Validation
+```shell
 python -m torch.distributed.launch --nproc_per_node=8 test_net.py --config-file "config_files/config_file.yaml" MODEL.WEIGHT "/path/to/model"
+```
+
+## Acknowledgements
+We would like to thank Ligeng Chen for his help in drawing the figures in the paper and thank Lei Chen for her surpport in experiments. This project is built up AlphaAction, AdaMixer and PySlowFast. We also reference and use some code from SparseRCNN, WOO and VideoMAE. Very sincere thanks to the contributors to these excellent codebases.
+
+## Citation
+
+If this project helps you in your research or project, please cite
+our paper:
+
+```
+@inproceedings{wu2023stmixer,
+      title={STMixer: A One-Stage Sparse Action Detector}, 
+      author={Tao Wu and Mengqi Cao and Ziteng Gao and Gangshan Wu and Limin Wang},
+      booktitle={{CVPR}},
+      year={2023}
+}
+```
 
 
