@@ -36,7 +36,7 @@ python -m torch.distributed.launch --nproc_per_node=8 test_net.py --config-file 
 ```
 
 ## Acknowledgements
-We would like to thank Ligeng Chen for his help in drawing the figures in the paper and thank Lei Chen for her surpport in experiments. This project is built up AlphaAction, AdaMixer and PySlowFast. We also reference and use some code from SparseRCNN, WOO and VideoMAE. Very sincere thanks to the contributors to these excellent codebases.
+We would like to thank Ligeng Chen for his help in drawing the figures in the paper and thank Lei Chen for her surpport in experiments. This project is built upon [AlphaAction](https://github.com/MVIG-SJTU/AlphAction), [AdaMixer](https://github.com/MCG-NJU/AdaMixer) and [PySlowFast](https://github.com/facebookresearch/SlowFast). We also reference and use some code from [SparseR-CNN](https://github.com/PeizeSun/SparseR-CNN), [WOO](https://github.com/ShoufaChen/WOO) and [VideoMAE](https://github.com/MCG-NJU/VideoMAE). Very sincere thanks to the contributors to these excellent codebases.
 
 ## Citation
 
