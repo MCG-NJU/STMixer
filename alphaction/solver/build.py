@@ -142,23 +142,20 @@ def make_optimizer(cfg, model):
         bn_parameters = []
         non_bn_parameters = []
 
-        frozn_bn_params = cfg.MODEL.BACKBONE.FROZEN_BN
-        # only affine layer frozen, running_mean and var still update.
-        if frozn_bn_params:
+        frozn_bn = cfg.MODEL.BACKBONE.FROZEN_BN
+        # only running_mean and var frozen
+        if frozn_bn:
             for m in model.backbone.modules():
                 if isinstance(m, nn.BatchNorm3d):
                     m.eval()
         for name, p in model.named_parameters():
             if ("backbone" in name) and ('bn' in name):
-                if cfg.MODEL.BACKBONE.FROZEN_BN:
-                    p.requires_grad = False
                 bn_parameters.append(p)
             else:
                 non_bn_parameters.append(p)
 
         optim_params = []
-        if (not frozn_bn_params) and len(bn_parameters) > 0:
-            optim_params.append({
+        optim_params.append({
                 "params": bn_parameters,
                 "weight_decay": cfg.SOLVER.WEIGHT_DECAY_BN,
                 "lr": cfg.SOLVER.BASE_LR

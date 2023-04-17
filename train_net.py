@@ -40,14 +40,9 @@ def train(cfg, local_rank, distributed, tblogger=None, transfer_weight=False, ad
     scheduler = make_lr_scheduler(cfg, optimizer)
 
     if distributed:
-        if ('vit' not in cfg.MODEL.BACKBONE.CONV_BODY.lower()) and (not cfg.MODEL.BACKBONE.FROZEN_BN):
-            model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model)
-            broadcast_buffers = True
-        else:
-            broadcast_buffers = False
+        model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model)
         model = torch.nn.parallel.DistributedDataParallel(
             model, device_ids=[local_rank], output_device=local_rank,
-            broadcast_buffers=broadcast_buffers,
         )
 
     arguments = {}
