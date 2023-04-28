@@ -3,6 +3,7 @@ import logging
 import os
 
 import torch
+from collections import OrderedDict
 
 from alphaction.utils.model_serialization import load_state_dict
 from alphaction.utils.c2_model_loading import load_c2_format
@@ -131,7 +132,12 @@ class ActionCheckpointer(Checkpointer):
             return load_c2_format(f)
         loaded = super(ActionCheckpointer, self)._load_file(f)
         if "model" not in loaded:
-            loaded = dict(model=loaded)
+            if 'module' in loaded:
+                loaded = loaded['module']
+                new_loaded = OrderedDict()
+                for k in loaded:
+                    new_loaded['backbone.'+k] = loaded[k]
+            loaded = dict(model=new_loaded)
         return loaded
 
     # def _get_c2_weight_map(self):

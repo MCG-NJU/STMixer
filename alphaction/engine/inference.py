@@ -28,7 +28,7 @@ def compute_on_dataset_1stage(model, data_loader, device):
             if fast_video is not None:
                 fast_video = fast_video.to(device)
             whwh = whwh.to(device)
-            action_score_list, box_list =model(slow_video, fast_video, whwh, boxes, labels)
+            action_score_list, box_list = model(slow_video, fast_video, whwh, boxes, labels)
             results_dict.update(
                 {video_id: (box.cpu(), action_score.cpu()) for video_id, box, action_score in zip(idx, box_list, action_score_list)}
             )

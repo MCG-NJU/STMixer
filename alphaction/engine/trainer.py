@@ -27,6 +27,7 @@ def do_train(
         distributed,
         mem_active,
         frozen_backbone_bn,
+        output_folder,
 ):
     logger = logging.getLogger("alphaction.trainer")
     logger.info("Start training")
@@ -131,7 +132,8 @@ def do_train(
                 tblogger,
                 iteration,
                 distributed,
-                mem_active
+                mem_active,
+                output_folder
             )
             model.train()
             if frozen_backbone_bn:
@@ -157,6 +159,7 @@ def val_in_train(
         iteration,
         distributed,
         mem_active,
+        output_folder,
 ):
     if distributed:
         model_val = model.module
@@ -168,6 +171,7 @@ def val_in_train(
             data_loader_val,
             dataset_name,
             mem_active,
+            output_folder=output_folder,
         )
         synchronize()
         if tblogger is not None:

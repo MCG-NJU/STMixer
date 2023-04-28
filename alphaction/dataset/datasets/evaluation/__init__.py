@@ -17,7 +17,7 @@ def evaluate(dataset, predictions, output_folder, **kwargs):
     args = dict(
         dataset=dataset, predictions=predictions, output_folder=output_folder, **kwargs
     )
-    if isinstance(dataset, datasets.Ava):
+    if isinstance(dataset, datasets.Ava) or isinstance(dataset, datasets.AvaKinetics):
         return ava_evaluation(**args)
     else:
         dataset_name = dataset.__class__.__name__

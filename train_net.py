@@ -51,6 +51,9 @@ def train(cfg, local_rank, distributed, tblogger=None, transfer_weight=False, ad
 
     output_dir = cfg.OUTPUT_DIR
 
+    output_folder = os.path.join(cfg.OUTPUT_DIR, "inference")
+    os.makedirs(output_folder, exist_ok=True)
+
     # load weight.
     save_to_disk = get_rank() == 0
 
@@ -102,6 +105,7 @@ def train(cfg, local_rank, distributed, tblogger=None, transfer_weight=False, ad
         distributed,
         mem_active,
         frozen_backbone_bn,
+        output_folder
     )
 
     return model
