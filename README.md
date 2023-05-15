@@ -22,7 +22,7 @@ Please refer to [ACAR-Net repo DATA.md](https://github.com/Siyu-C/ACAR-Net/blob/
 | SlowFast-R50      |   [cfg](https://github.com/MCG-NJU/STMixer/blob/main/config_files/PySlowfast-R50-K400-8x8.yaml)      |       [K400](https://dl.fbaipublicfiles.com/pyslowfast/model_zoo/kinetics400/SLOWFAST_8x8_R50.pkl)      |    8   |       8       |  [Link](https://drive.google.com/file/d/1pwXBC-g-OS71wzd9lxHDITASRw1cxRWm/view?usp=share_link) |
 | SlowFast-R101-NL  |   [cfg](https://github.com/MCG-NJU/STMixer/blob/main/config_files/PySlowfast-R101-NL-K600-8x8.yaml)  |       [K600](https://dl.fbaipublicfiles.com/pyslowfast/model_zoo/ava/pretrain/SLOWFAST_32x2_R101_50_50.pkl)      |    8   |       8       |  [Link](https://drive.google.com/file/d/1oouF7IZFxs-vXhUDXSkLpy7FE5oh6Vp2/view?usp=share_link) |
 | ViT-B(VideoMAE)   |   [cfg](https://github.com/MCG-NJU/STMixer/blob/main/config_files/VMAE-ViTB-16x4.yaml)  |       [K400](https://drive.google.com/file/d/1MzwteHH-1yuMnFb8vRBQDvngV1Zl-d3z/view)      |   16   |       4       |  [Link](https://drive.google.com/file/d/1hVni60LLWHZBaaNkccrrEAo1xFEM2ZPV/view?usp=sharing) |
-| ViT-B(VideoMAEv2) |   TODO  |    K710+K400    |   16   |       4       |  TODO |
+| ViT-B(VideoMAEv2) |   [cfg](https://github.com/MCG-NJU/STMixer/blob/main/config_files/VMAEv2-ViTB-16x4.yaml)  |    [K710+K400](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/internvideo/distill/vit_b_k710_dl_from_giant.pth)    |   16   |       4       | [Link](https://drive.google.com/file/d/1S5_mePN9lmkIyW_kRcTESfeitKomqW-y/view?usp=sharing)  |
 
 
 ## Training
