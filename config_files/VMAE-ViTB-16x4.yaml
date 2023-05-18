@@ -1,5 +1,5 @@
 DATA:
-  PATH_TO_DATA_DIR: "/data0/wutao/ava"
+  PATH_TO_DATA_DIR: "/path/to/ava"
   NUM_FRAMES: 16
   SAMPLING_RATE: 4
   INPUT_CHANNEL_NUM: [3]
