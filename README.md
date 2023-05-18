@@ -13,7 +13,7 @@ This repository gives the official PyTorch implementation of [STMixer: A One-Sta
 - iopath
 
 ## Data Preparation
-Please refer to [PySlowFasst DATASET.md](https://github.com/facebookresearch/SlowFast/blob/main/slowfast/datasets/DATASET.md)  for AVA dataset preparation.
+Please refer to [PySlowFast DATASET.md](https://github.com/facebookresearch/SlowFast/blob/main/slowfast/datasets/DATASET.md)  for AVA dataset preparation.
 
 ## Model Zoo
 | Backbone          | Config | Pre-train Model | Frames | Sampling Rate | Model |
